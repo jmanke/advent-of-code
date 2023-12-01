@@ -56,6 +56,8 @@ function toNumber(value) {
   return num;
 }
 
+// Regex in JS doesn't natively support overlapping matches. No matter, instead of 
+// solving this efficiently we're solving this with REGEX baby
 function findOverlappingMatches(regex, input) {
   let match;
   const matches = [];
