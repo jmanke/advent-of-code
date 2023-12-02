@@ -22,10 +22,11 @@ import { readInput } from "../read-input.js";
 
 // Consider your entire calibration document. What is the sum of all of the calibration values?
 
+const input = readInput("./day-01/input.txt");
+
 // part 1:
 
 function partOne() {
-  const input = readInput("./day-01/input.txt").split("\n");
   const results = input.map((v) => {
     const numbers = v.match(/\d/g) ?? "0";
     return `${numbers[0]}${numbers[numbers.length - 1]}`;
@@ -56,7 +57,7 @@ function toNumber(value) {
   return num;
 }
 
-// Regex in JS doesn't natively support overlapping matches. No matter, instead of 
+// Regex in JS doesn't natively support overlapping matches. No matter, instead of
 // solving this efficiently we're solving this with REGEX baby
 function findOverlappingMatches(regex, input) {
   let match;
@@ -82,7 +83,6 @@ function findOverlappingMatches(regex, input) {
 }
 
 function partTwo() {
-  const input = readInput("./day-01/input.txt").split("\n");
   const results = input.map((v) => {
     const numbers = findOverlappingMatches(
       /(\d)|(?=(one|two|three|four|five|six|seven|eight|nine))/g,
